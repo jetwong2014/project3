@@ -1,0 +1,17 @@
+{
+  "name": "project3-sass",
+  "version": "1.0.0",
+  "description": "ohmyfood",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css",
+    "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jetwong2014/project3.git"
+  },
+  "author": "jet",
+  "license": "ISC",
+  "browserslist": "last 4 versions"
+}
