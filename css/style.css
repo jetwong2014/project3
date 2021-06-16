@@ -4,15 +4,31 @@ body {
 
 body {
   font-family: "Roboto", serif;
+  letter-spacing: 0px;
 }
 
 h1 {
   font-family: "Shrikhand", sans-serif;
 }
 
-header {
+.header {
   display: flex;
   justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.locate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #CCC;
+  box-shadow: 0px -1px 2px #b3b3b3;
+}
+.locate__icon {
+  margin-right: 1rem;
+}
+.locate__byline {
+  margin-right: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

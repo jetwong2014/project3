@@ -6,14 +6,43 @@ body {
 //typography
 body {
     font-family: 'Roboto', serif;
+    letter-spacing: 0px;
 }
 
 h1 {
     font-family: 'Shrikhand', sans-serif;
 }
 
-//header  
-header {
+//variables
+$primary-color: #9356DC;
+$secondary-color: #FF79DA;
+$tertiary-color: #99E2D0;
+$bg-color: #CCC;
+
+//maxin
+
+@mixin flex-center {
     display: flex;
-    justify-content: center;
+    justify-content: center;       
+}
+
+
+//header  
+.header {
+    @include flex-center;    
+    margin-bottom: 1rem;
+}
+
+//locate
+.locate {
+    @include flex-center;
+    align-items: center;
+    background-color: $bg-color;
+    box-shadow: 0px -1px 2px darken($color: $bg-color, $amount: 10);
+    &__icon {
+        margin-right: 1rem;
+    }
+    &__byline {
+        margin-right: 1rem;
+    }
 }
