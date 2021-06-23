@@ -1,0 +1,73 @@
+@mixin shadow {
+    box-shadow: 1px 1px 8px $bg-color;    
+}
+
+
+
+@mixin border-radius($size: 1rem) {
+    border: 0;
+    border-radius: $size;    
+}
+
+
+@mixin flex-center($direction: row) {
+    display: flex;
+    justify-content: center;
+    flex-direction: $direction;       
+}
+
+@mixin pseudo($content:"") {
+    content: $content;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;        
+}
+
+
+@mixin btn {
+    padding: 1rem 1.5rem;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(0deg,$primary-color, $secondary-color );
+    border: 0;
+    border-radius: 2rem;
+    box-shadow: 4px 4px 5px darken($bg-color,5);
+    position: relative;    
+    z-index: 1;
+    &:hover {
+        &::after {
+            opacity: 1;
+        }
+    }
+    &::after {
+        content:"";
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 2rem;
+        background: linear-gradient(0deg,$primary-color, $secondary-color );
+        filter: brightness(115%);
+        box-shadow: 1px 4px 2px darken($bg-color,13);
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 250ms;        
+    }  
+}
+
+@mixin favorite-icon {
+        color: darken($bg-color, $amount: 38);
+        cursor: pointer;
+}
+
+@mixin favorite-icon-color {
+        cursor: pointer;
+        background:linear-gradient(0deg,$primary-color, $secondary-color );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+}
