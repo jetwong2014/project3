@@ -10,7 +10,8 @@
 
 
 .header {
-    @include flex-center;    
+    @include flex-center;
+    padding-top: 1.5rem;
     
 }
 //locate
