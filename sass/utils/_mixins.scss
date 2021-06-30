@@ -71,3 +71,10 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
 }
+
+@mixin media-query($type) {
+    $device: map-get($devicewidth, $type);
+    @media screen and (min-width: map-get($device, min)) and (max-width: map-get($device, max)) {
+        @content;
+    }
+}
