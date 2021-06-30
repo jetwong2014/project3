@@ -1,0 +1,364 @@
+.loader {
+    position: absolute;
+    opacity: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;  
+    width: 200px;
+    height: 200px;
+    perspective-origin: center center;
+    perspective: 500px;
+    animation: showtime 2500ms linear;
+    transform: scale(1);
+    &__container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transform-origin: center center -50px;
+        animation: loader linear 3s ;
+    }
+    &__box {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        &--1 {
+            transform: translateX(50px) translateY(50px);
+        }
+        &--2 {
+            transform-origin: left top;
+            transform: translateX(150px) translateY(50px) rotateY(90deg);            
+        }
+        &--3 {
+            transform: translateX(50px) translateY(50px) translateZ(-100px) rotateY(180deg);
+        }
+        &--4 {
+            transform-origin: right top;
+            transform: translateX(-50px) translateY(50px) rotateY(-90deg);
+        }
+        &--5 {
+            background-color: $primary-color;
+            transform-origin: center bottom;
+            transform: translateX(50px) translateY(-50px) rotateX(90deg);
+        }
+        &--6 {
+            background-color: $secondary-color;
+            transform-origin: center top;
+            transform: translateX(50px) translateY(150px) rotateX(-90deg);
+        }
+    }
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.main-container {
+    opacity: 1;
+    animation: showtime-homepage 3s 1s ease-in-out backwards;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 1.5rem;
+    @include media-query(desktop) {
+        font-size: 1.2rem;
+    }
+    @include media-query(tablet) {
+        font-size: 1.2rem;
+    }
+}
+
+.locate {
+    flex-basis: 100%;
+    @include flex-center;
+    margin-top: 1rem ;
+    align-items: center;
+    background-color: $bg-color;
+    box-shadow: 0 -2px 2px darken($bg-color, $amount: 15);
+    &__icon {
+        margin-right: 1rem;
+    }
+    &__byline {
+        margin-right: 1rem;
+        font-weight: 800;
+    }
+}
+
+
+.user-guide {
+    @include media-query(desktop) {
+        display: flex;
+        justify-content: center;
+    }
+    @include media-query(tablet) {
+        display: flex;
+        justify-content: center;
+    }
+}
+.guide {
+    @include flex-center(column);
+    align-items: center;   
+    text-align: center;
+    background-color: lighten(#CCC, 15);
+    @include media-query(desktop) {
+        font-size: 1.2rem;
+        flex-basis: 50%;
+        justify-content: space-evenly;
+    }
+    @include media-query(tablet) {
+        flex-basis: 50%;
+        justify-content: space-evenly;
+        font-size: 1.1rem;
+    }
+
+    &__heading {
+        font-weight: 800;
+        @include media-query(desktop) {
+            margin-top: -39px;
+        }
+        @include media-query(tablet) {
+            margin-top: -41px;
+
+        }
+    }
+    &__btn {
+        @include btn;
+        margin-bottom: 2rem;
+    }
+    
+}
+
+.step {
+    @include flex-center(column);
+    align-items: center;
+    padding-bottom: 3rem;
+    @include media-query(desktop) {
+        font-size: 1.2rem;
+        flex-basis: 50%;
+    }
+    @include media-query(tablet) {
+        flex-basis: 50%;
+        font-size: 1.1rem;
+    }      
+    & h2 {
+        margin-right: auto;
+        padding: 1.5rem;
+        @include media-query(desktop) {
+            margin: auto;
+        }
+        @include media-query(tablet) {
+            margin: auto;
+        }
+    }
+    
+}
+
+.card {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: lighten(#CCC, 15);
+    width: 80%;
+    padding: .8rem;
+    margin-bottom: 1.5rem;
+    border-radius: 1.5rem;
+    @include media-query(desktop) {
+        width: 55%;
+    }
+    @include media-query(phone-landscape) {
+        width: 70%;
+    }
+    @include shadow;
+    position: relative;
+    z-index: 1;
+    &:hover, &:active {
+        &::after {
+            opacity: 1;
+        }
+        & > .card__icon--phone {
+            &::after {
+                opacity: 1;
+            }
+        }
+        & > .card__icon--list {
+            &::after {
+                opacity: 1;
+            }
+        }
+        & > .card__icon--store {
+            &::after {
+                opacity: 1;
+            }
+        }        
+    }
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: lighten($primary-color, 35);
+        border-radius: 1.5rem;
+        box-shadow: 1px 1px 8px $bg-color;
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 250ms;
+
+    }
+    &__label {
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        position: relative;
+        right: 1.35rem;
+        background-color: $primary-color;
+        color: white;
+        padding: .2rem;
+        font-size: .6rem;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 16px;
+    }
+    &__icon--phone {        
+        font-size: 20px;
+        margin-right: 1.6rem;
+        color: $bg-color;
+        position: relative;
+        z-index: 1;         
+        &::after {
+            @include pseudo($phone);
+            color: $primary-color;
+            opacity: 0;
+            transition: opacity 250ms;
+        }         
+    }
+    &__icon--list {
+        font-size: 20px;
+        margin-right: 1.6rem;
+        color: $bg-color;
+        position: relative;
+        z-index: 1;
+        &::after {
+            @include pseudo($list);
+            color: $primary-color;
+            opacity: 0;
+            transition: opacity 250ms;
+        }
+    }
+    &__icon--store {
+        font-size: 20px;
+        margin-right: 1.6rem;
+        color: $bg-color;
+        position: relative;
+        z-index: 1;
+        &::after {
+            @include pseudo($store);
+            color: $primary-color;
+            opacity: 0;
+            transition: opacity 250ms;
+        }        
+    }    
+    &__byline {
+        font-weight: 800;
+    }
+    
+}
+
+.restaurants {
+    padding: 1.5rem ;
+    background-color: lighten(#CCC, 15);
+}
+
+.restaurant-prev-container {
+    @include media-query(desktop) {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    @include media-query(tablet) {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap
+    }
+    @include media-query(phone-landscape) {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    
+}
+
+.restaurant-prev {
+    @include border-radius;
+    background-color: white;
+    @include shadow;
+    margin-bottom: 1rem;
+    position: relative;
+    @include media-query(desktop) {
+        flex-basis: 23%;
+    }
+    @include media-query(tablet) {
+        flex-basis: 48%;
+    }
+    @include media-query(phone-landscape) {
+        flex-basis: 80%;
+    }
+    &::before {
+        content: "New";
+        position: absolute;
+        margin-top:  5%;
+        margin-left: 70%;
+        padding: .5rem 1.5rem;
+        color: darken($tertiary-color, 40);
+        background-color: $tertiary-color;
+    }
+    &--disable-tag::before {
+        content: none;        
+    }     
+    &__image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 1rem 1rem 0 0;       
+    }
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__textbox {
+        line-height: 0;
+        margin-left: 1rem;     
+    }
+    &__heading {
+        font-weight: 800;        
+    }
+    &__icon {
+        @include favorite-icon;
+        position: absolute;
+        left: 80%;
+        opacity: 1;
+        transition: opacity 250ms;
+        &:active, &:hover { 
+            opacity: 0;
+        }
+    }
+    &__icon-color {
+        @include favorite-icon-color;
+        position: absolute;
+        left: 80%;
+        opacity: 0;
+        transition: opacity 250ms;
+        &:active, &:hover {
+            opacity: 1;
+        }
+    } 
+}

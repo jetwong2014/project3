@@ -1,67 +1,54 @@
-.menu-page-header {
-    display: flex;    
-    align-items: center;
-    padding: 1rem;
-    &__heading {
-        margin: auto;
-    }
-    &__link {
-        margin-left: 5%;
-        color: black;        
-        &:active, &:visited {
-            text-decoration: none;
-            color: inherit;
-        }                
-    }
-}
-
-.restaurant {
-    &__image {
-        width: 100%;
-        height: 220px;
-        object-fit: cover;
-    }
-    &__heading-container {
+.menu-area {
+    @include flex-center(column);
+    background-color: lighten($bg-color, 15);
+    @include media-query(desktop) {
         display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        font-size: 1.2rem;
+    }
+    @include media-query(tablet) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: space-between;
-        align-items: center;
-        border-radius: 2rem 2rem 0 0rem;
-        background-color: lighten($bg-color, 15);
-        padding: 1rem;
-        position: relative;
-        bottom: 2rem;
-        margin-bottom: -2rem;      
+        font-size: 1.1rem;
     }
-    &__heading {
-        font-family: 'Shrikhand', serif;
+    @include media-query(phone-landscape) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
-    &__icon {
-        @include favorite-icon;
-        position: absolute;
-        left: 85%;
-        opacity: 1;
-        transition: opacity 250ms;
-        &:active, &:hover {
-            opacity: 0;
+    &__btn {
+        @include btn;
+        width: 50%;
+        margin: .5rem auto 5rem auto;
+        @include media-query(desktop) {
+            flex-basis: 25%;
         }
-
+        @include media-query(tablet) {
+            flex-basis: 29%;
+            height: 50px;
+            align-self: center;
+            margin: 0 5rem;
+        }
+        @include media-query(phone-landscape) {
+            flex-basis: 33%;
+        }
     }
-    &__icon-color {
-        @include favorite-icon-color;
-        position: absolute;
-        left: 85%;
-        opacity: 0;
-        transition: opacity 250ms;
-        &:active, &:hover {
-            opacity: 1;
-        }      
-    }
-
 }
 
 .menu-catalog {
-    background-color: lighten($bg-color, 15);
     padding-bottom: 2.5rem;
+    @include media-query(desktop) {
+        flex-basis: 30%;
+    }
+    @include media-query(tablet) {
+        flex-basis: 50%;        
+    }
+    @include media-query(phone-landscape) {
+        width:  70%;
+    }
     &__heading {
         margin: 0 .8rem;
         font-weight: 400;
@@ -81,18 +68,19 @@
 }
 
 .menu {
-    flex-basis: 95%;
+    flex-basis: 90%;
     display: flex;
     justify-content: space-between; 
     align-items: center;
     background-color: white;
+    @include shadow;
     border-radius: 1rem;
     position: relative;
     overflow: hidden;
     cursor: pointer;
     opacity: 1;
     animation: menus $anim-dur backwards ease-in-out;
-    @for $i from 1 through 3 {
+    @for $i from 1 through 4 {
         &--#{$i} {
             animation-delay: $anim-delay * $i;
         }
@@ -150,65 +138,4 @@
         display: block;
         color: white;
     }
-}
-
-
-@keyframes menus { 
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }    
-}
-
-
-@keyframes menu-icon-wrapper-wayback {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(100px);
-    }
-}
-
-
-@keyframes menu-text-indent-wayback {
-    from {
-        text-indent: -100px;
-    }
-    to {
-        text-indent: 0;
-    }
-}
-
-@keyframes menu-text-indent {
-    from {
-        text-indent: 0;
-    }
-    to {
-        text-indent: -100px;
-    }
-}
-
-
-
-@keyframes menu-icon-wrapper {
-    from {
-        transform: translateX(100px);
-    }
-
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes menu-icon {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }    
 }

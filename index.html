@@ -11,22 +11,40 @@
     <script src="https://kit.fontawesome.com/4600e15810.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="loader">
+        <div class="loader__container">
+            <div class="loader__box loader__box--1">
+                <img src="/img/bastille.jpg" alt="loader image">
+            </div>
+            <div class="loader__box loader__box--2">
+                <img src="/img/le_gourmand.jpg" alt="loader image">
+            </div>
+            <div class="loader__box loader__box--3">
+                <img src="/img/the_enchanted_plate.jpg" alt="loader image">
+            </div>
+            <div class="loader__box loader__box--4">
+                <img src="/img/the_full_palette.jpg" alt="loader image">
+            </div>                
+            <div class="loader__box loader__box--5">loading..</div>
+            <div class="loader__box loader__box--6">Ohmyfood</div>
+        </div>
+    </div>
+    <div class="main-container">
     <header class="header">
         <img class="header__logo" src="./img/ohmyfood@2x.svg" alt="ohmyfood logo">
+        <div class="locate">
+            <i class="fas fa-map-marker-alt fa-fw locate__icon"></i>
+            <p class="locate__byline">Paris, Belleville</p>
+        </div> 
     </header>
 
-    <div class="locate">
-        <i class="fas fa-map-marker-alt fa-fw locate__icon"></i>
-        <p class="locate__byline">Paris, Belleville</p>
-    </div> 
-   
     <section class="user-guide">
         <div class="guide">
             <h2 class="guide__heading">
-            Book the menu you like
+                Book the menu you like
             </h2>
             <p class="guide__byline">
-            Discover top-of-the-art restaurants we picked for you
+                Discover top-of-the-art restaurants we picked for you
             </p>
             <button class="guide__btn">Explore our restaurants</button>
         </div>
@@ -62,8 +80,8 @@
         </h2>
         <div class="restaurant-prev-container">
             <div class="restaurant-prev">
-                <a href="./menu_the_full_palette.html">
-                <img src="img/the_full_palette.jpg" alt="restaurant image" class="restaurant-prev__image">
+                <a href="./the-full-palette.html">
+                    <img src="img/the_full_palette.jpg" alt="restaurant image" class="restaurant-prev__image">
                 </a>
                 <div class="restaurant-prev__content">
                     <div class="restaurant-prev__textbox">
@@ -78,7 +96,9 @@
             </div>
 
             <div class="restaurant-prev">
-                <img src="./img/the_enchanted_plate.jpg" alt="restaurant image" class="restaurant-prev__image">
+                <a href="./the-enchanted-plate.html">
+                    <img src="./img/the_enchanted_plate.jpg" alt="restaurant image" class="restaurant-prev__image">
+                </a>
                 <div class="restaurant-prev__content">
                     <div class="restaurant-prev__textbox">
                         <h3 class="restaurant-prev__heading">
@@ -92,7 +112,9 @@
             </div>
 
             <div class="restaurant-prev restaurant-prev--disable-tag">
-                <img src="./img/bastille.jpg" alt="restaurant image" class="restaurant-prev__image">
+                <a href="./bastille.html">
+                    <img src="./img/bastille.jpg" alt="restaurant image" class="restaurant-prev__image">
+                </a>
                 <div class="restaurant-prev__content">
                     <div class="restaurant-prev__textbox">
                         <h3 class="restaurant-prev__heading">
@@ -106,7 +128,9 @@
             </div>
 
             <div class="restaurant-prev restaurant-prev--disable-tag">
-                <img src="./img/le_gourmand.jpg" alt="restaurant image" class="restaurant-prev__image">
+                <a href="./le-gourmand.html"> 
+                    <img src="./img/le_gourmand.jpg" alt="restaurant image" class="restaurant-prev__image">
+                </a>
                 <div class="restaurant-prev__content">
                     <div class="restaurant-prev__textbox">
                         <h3 class="restaurant-prev__heading">
@@ -120,7 +144,7 @@
             </div>                    
         </div>
     </section>  
-    
+        
     <footer class="footer">
         <h2 class="footer__heading">ohmyfood</h2>
         <ul class="footer__list">
@@ -136,10 +160,12 @@
                 <p>Legal</p>
             </li>
             <li>
-                <p>Contact</p>
+                <a href="mailto:webmaster@ohmyfood.test">
+                    <p>Contact</p>
+                </a>
             </li>
         </ul>
     </footer>
-    
+    </div>
 </body>
 </html>
