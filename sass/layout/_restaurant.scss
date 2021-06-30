@@ -1,0 +1,48 @@
+.restaurant {
+    @include media-query(desktop) {
+        font-size: 1.2rem;
+    }
+    &__image {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        @include media-query(desktop) {
+            height: 440px;
+            object-fit: cover;
+        }
+    }
+    &__heading-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 2rem 2rem 0 0rem;
+        background-color: lighten($bg-color, 15);
+        padding: 1rem;
+        position: relative;
+        bottom: 2rem;
+        margin-bottom: -2rem;      
+    }
+    &__heading {
+        font-family: 'Shrikhand', serif;
+    }
+    &__icon {
+        @include favorite-icon;
+        position: absolute;
+        left: 85%;
+        opacity: 1;
+        transition: opacity 250ms;
+        &:active, &:hover {
+            opacity: 0;
+        }
+    }
+    &__icon-color {
+        @include favorite-icon-color;
+        position: absolute;
+        left: 85%;
+        opacity: 0;
+        transition: opacity 250ms;
+        &:active, &:hover {
+            opacity: 1;
+        }      
+    }
+}
