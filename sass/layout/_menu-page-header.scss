@@ -1,0 +1,30 @@
+.menu-page-header {
+    display: flex;    
+    align-items: center;
+    padding: 1rem;
+    @include media-query(desktop) {
+        font-size: 1.2rem;
+    }
+    @include media-query(tablet) {
+        font-size: 1.1rem;
+    }
+    &__heading {
+        margin: auto;
+    }
+    &__link {
+        margin-left: 5%;
+        color: black;        
+        &:active, &:visited {
+            text-decoration: none;
+            color: inherit;
+        }
+        & i {
+            @include media-query(desktop) {
+                font-size: 1.6rem;
+            }
+            @include media-query(tablet) {
+                font-size: 1.6rem;
+            }
+        }              
+    }
+}
