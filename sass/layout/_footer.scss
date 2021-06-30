@@ -1,0 +1,35 @@
+.footer {
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    @include media-query(desktop) {
+        font-size: 1.2rem;
+    }
+    @include media-query(tablet) {
+        font-size: 1.1rem;
+    }
+    &__heading {
+        font-family: 'Shrikhand', sans-serif;
+    }
+    &__list {
+        list-style-type: none;
+        padding: 0;
+        line-height: 0;
+        & li{
+            display: flex;
+            align-items: center;            
+        }
+        & a {
+            color: white;
+            text-decoration: none;
+            background-color: transparent;
+        }
+    }
+    &__icon {
+        font-size: .8rem;
+    }
+    &__byline--bold {
+        margin-left: 10px;
+        font-weight: bold;        
+    }
+}
