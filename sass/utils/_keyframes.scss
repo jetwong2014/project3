@@ -54,12 +54,12 @@
     }    
 }
 
-@keyframes loader {
+@keyframes loader {   
     from {
-        transform: /*rotateX(0deg)*/ rotateY(0);
+        transform: rotateY(0);
     }
     to {
-        transform: /* rotateX(359.9deg) */ rotateY(-359.9deg);
+        transform: rotateY(-359.9deg);
     }
 }
 
