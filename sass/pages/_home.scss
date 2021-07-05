@@ -11,7 +11,6 @@
     perspective-origin: center center;
     perspective: 500px;
     animation: showtime 2500ms linear;
-    transform: scale(1);
     &__container {
         position: relative;
         width: 100%;
@@ -169,19 +168,19 @@
     width: 80%;
     padding: .8rem;
     margin-bottom: 1.5rem;
-    border-radius: 1.5rem;
+    border-radius: 1.5rem; 
+    @include shadow;
+    position: relative;
+    z-index: 1;
     @include media-query(desktop) {
         width: 55%;
     }
     @include media-query(phone-landscape) {
         width: 70%;
     }
-    @include shadow;
-    position: relative;
-    z-index: 1;
     &:hover, &:active {
         &::after {
-            opacity: 1;
+            opacity: 1;            
         }
         & > .card__icon--phone {
             &::after {
@@ -211,8 +210,7 @@
         box-shadow: 1px 1px 8px $bg-color;
         opacity: 0;
         z-index: -1;
-        transition: opacity 250ms;
-
+        transition: opacity 250ms;       
     }
     &__label {
         width: 16px;
